@@ -37,10 +37,7 @@ class MyHTMLParser(HTMLParser):
 							#print value
 							tdate = time.strptime(value[0:12], "%Y-%m-%d-%H")
 							dtdate = datetime.datetime(*tdate[:6])
-							if dtdate<self.m_startTime or dtdate>self.m_endTime:
-								
-								break;
-							else:
+							if dtdate>=self.m_startTime and dtdate<=self.m_endTime:
 								dateStr = value[0:7]
 								monthPath = rootPath_HTML + os.path.sep + dateStr
 								if not os.path.exists(monthPath):
@@ -121,3 +118,6 @@ hp.feed(text)
 hp.close()
 
 print hp.linkset
+
+import os
+os.system("pause")
