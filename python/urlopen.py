@@ -106,7 +106,7 @@ class MyHTMLParser2(HTMLParser):
 
 
 etime = datetime.datetime.now()
-stime = etime + datetime.timedelta(days=-3)
+stime = etime + datetime.timedelta(days=-7)
 webpage = urlopen(downloadUrl)
 text = webpage.read()
 output = open('baidu.html','w')
